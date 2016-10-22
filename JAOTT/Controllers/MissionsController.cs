@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using JAOTT.Models;
 
-
 namespace JAOTT.Controllers
 {
     public class MissionsController : Controller
@@ -49,7 +48,7 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RequestId,VolunteerId,StartTime,UserId")] Mission mission)
+        public ActionResult Create([Bind(Include = "Id,RequestId,VolunteerId,StartTime")] Mission mission)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +82,7 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RequestId,VolunteerId,StartTime,UserId")] Mission mission)
+        public ActionResult Edit([Bind(Include = "Id,RequestId,VolunteerId,StartTime")] Mission mission)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +90,6 @@ namespace JAOTT.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.VolunteerId = new SelectList(db.Volunteers, "Id", "FirstName", mission.VolunteerId);
             return View(mission);
         }

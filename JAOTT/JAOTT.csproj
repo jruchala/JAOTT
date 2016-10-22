@@ -207,9 +207,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610222122532_db-create.cs" />
-    <Compile Include="Migrations\201610222122532_db-create.Designer.cs">
-      <DependentUpon>201610222122532_db-create.cs</DependentUpon>
+    <Compile Include="Migrations\201610222200220_troubleshooting.cs" />
+    <Compile Include="Migrations\201610222200220_troubleshooting.Designer.cs">
+      <DependentUpon>201610222200220_troubleshooting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -284,16 +284,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Volunteers\Create.cshtml" />
-    <Content Include="Views\Volunteers\Delete.cshtml" />
-    <Content Include="Views\Volunteers\Details.cshtml" />
-    <Content Include="Views\Volunteers\Edit.cshtml" />
-    <Content Include="Views\Volunteers\Index.cshtml" />
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Delete.cshtml" />
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Volunteers\Create.cshtml" />
+    <Content Include="Views\Volunteers\Delete.cshtml" />
+    <Content Include="Views\Volunteers\Details.cshtml" />
+    <Content Include="Views\Volunteers\Edit.cshtml" />
+    <Content Include="Views\Volunteers\Index.cshtml" />
     <Content Include="Views\Programs\Create.cshtml" />
     <Content Include="Views\Programs\Delete.cshtml" />
     <Content Include="Views\Programs\Details.cshtml" />
@@ -325,8 +325,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610222122532_db-create.resx">
-      <DependentUpon>201610222122532_db-create.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610222200220_troubleshooting.resx">
+      <DependentUpon>201610222200220_troubleshooting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

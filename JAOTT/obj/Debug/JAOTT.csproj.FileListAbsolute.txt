@@ -79,5 +79,5 @@ c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\bin\Mi
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.dll
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.pdb
-c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.Migrations.dbcreate.resources
+c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.Migrations.troubleshooting.resources
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.csproj.GenerateResource.Cache
