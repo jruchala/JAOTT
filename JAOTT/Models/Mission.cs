@@ -12,8 +12,6 @@ namespace JAOTT.Models
         public virtual Volunteer volunteer { get; set; }
         public int VolunteerId { get; set; }
         public DateTime StartTime { get; set; }
-
-        public virtual ApplicationUser User { get; set; }
         public string UserId { get; set; }
     }
 }
