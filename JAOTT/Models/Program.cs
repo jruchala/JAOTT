@@ -12,5 +12,12 @@ namespace JAOTT.Models
 
         public int Duration { get; set; }
         public bool PrepTime { get; set; }
+        public virtual ICollection<Request> Requests { get; set; }
+        public virtual ICollection<Volunteer> Volunteers { get; set; }
+        public Program()
+        {
+            this.Volunteers = new HashSet<Volunteer>();
+            this.Requests = new HashSet<Request>();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JAOTT.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,14 @@ namespace JAOTT.Models
         public bool Approved { get; set; }
         public DateTime Joined { get; set; }
 
+        public virtual ICollection<Program> Programs { get; set; }
+        public virtual ICollection<Mission> Missions { get; set; }
 
+        public Volunteer()
+        {
+            this.Programs = new HashSet<Program>();
+            this.Missions = new HashSet<Mission>();
+        }
 
     }
 }

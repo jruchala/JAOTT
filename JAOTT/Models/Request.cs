@@ -12,5 +12,9 @@ namespace JAOTT.Models
         public string Topic { get; set; }
         public string GradeLevel { get; set; }
 
+
+        public virtual Teacher teacher { get; set; }
+
+
     }
 }

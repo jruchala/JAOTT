@@ -29,5 +29,13 @@ namespace JAOTT.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Mission>Missions { get; set; }
+        public DbSet<Program>Programs { get; set; }
+        public DbSet<Request>Requests { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Volunteer> Volunteers { get; set; }
+
+            p
     }
 }
