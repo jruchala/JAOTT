@@ -38,7 +38,7 @@ namespace JAOTT.Migrations
                     Email = "bs429455@gmail.com",
 
                     
-                }, "");
+                }, "Password-1");
             }
             if (!context.Users.Any(u => u.Email == "jruchala@gmail.com"))
             {
@@ -48,7 +48,7 @@ namespace JAOTT.Migrations
                     Email = "jruchala@gmail.com",
 
                     
-                }, "");
+                }, "Password-1");
             }
 
             var userId = userManager.FindByEmail("bs429455@gmail.com").Id;
