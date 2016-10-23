@@ -15,6 +15,7 @@ namespace JAOTT.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Volunteers
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Volunteers.ToList());
@@ -46,13 +47,14 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,About,Address,Approved,Joined")] Volunteer volunteer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,About,Address")] Volunteer volunteer)
         {
             if (ModelState.IsValid)
             {
+                volunteer.Joined = DateTime.Now;
                 db.Volunteers.Add(volunteer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Volunteers", new { id = volunteer.Id });
             }
 
             return View(volunteer);
@@ -90,6 +92,7 @@ namespace JAOTT.Controllers
         }
 
         // GET: Volunteers/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

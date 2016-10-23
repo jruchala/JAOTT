@@ -35,20 +35,20 @@ namespace JAOTT.Migrations
                 userManager.Create(new ApplicationUser
                 {
                     UserName = "JohnnyEh",
-                    Email = "bs429455@gmail.com"
+                    Email = "bs429455@gmail.com",
 
                     
-                }, "Password-1");
+                }, "");
             }
             if (!context.Users.Any(u => u.Email == "jruchala@gmail.com"))
             {
                 userManager.Create(new ApplicationUser
                 {
                     UserName = "James",
-                    Email = "jruchala@gmail.com"
+                    Email = "jruchala@gmail.com",
 
                     
-                }, "Password-1");
+                }, "");
             }
 
             var userId = userManager.FindByEmail("bs429455@gmail.com").Id;

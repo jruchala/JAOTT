@@ -34,7 +34,7 @@ namespace JAOTT.Controllers
             }
             return View(program);
         }
-        
+        [Authorize(Roles = "Admin")]
         // GET: Programs/Create
         public ActionResult Create()
         {

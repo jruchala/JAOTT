@@ -7,17 +7,15 @@ using System.Web;
 
 namespace JAOTT.Models
 {
-    public class Volunteer : ApplicationUser
+    public class Volunteer
     {
         public int Id { get; set; }
 
-        [Display(Name = "First Name")]
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
 
-        [Display(Name = "Last Name")]
+        [Display(Name ="Last Name")]
         public string LastName { get; set; }
-
-
         public string About { get; set; }
         public string Address { get; set; }
         public bool Approved { get; set; }

@@ -40,7 +40,6 @@ namespace JAOTT.Controllers
         public ActionResult Create()
         {
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "FirstName");
-            ViewBag.ProgramId = new SelectList(db.Programs, "Id", "Topic");
             return View();
         }
 
@@ -55,7 +54,7 @@ namespace JAOTT.Controllers
             {
                 db.Requests.Add(request);
                 db.SaveChanges();
-                return RedirectToAction("Details", "Requests", new { id = request.Id });
+                return RedirectToAction("Index");
             }
 
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "FirstName", request.TeacherId);
