@@ -202,6 +202,7 @@
     <Compile Include="Controllers\MissionsController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
+    <Compile Include="Controllers\StaffsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\VolunteersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,6 +219,7 @@
     <Compile Include="Models\Mission.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -309,6 +311,11 @@
     <Content Include="Views\Missions\Details.cshtml" />
     <Content Include="Views\Missions\Edit.cshtml" />
     <Content Include="Views\Missions\Index.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Staffs\Delete.cshtml" />
+    <Content Include="Views\Staffs\Details.cshtml" />
+    <Content Include="Views\Staffs\Edit.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,6 +15,7 @@ namespace JAOTT.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Teachers
+        [Authorize (Roles ="Admin")]
         public ActionResult Index()
         {
             return View(db.Teachers.ToList());
@@ -46,13 +47,13 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Approved")] Teacher teacher)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,School,About")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
                 db.Teachers.Add(teacher);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Teachers", new { id = teacher.Id });
             }
 
             return View(teacher);
@@ -78,7 +79,7 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Approved")] Teacher teacher)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,School,About,Approved")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
@@ -90,6 +91,7 @@ namespace JAOTT.Controllers
         }
 
         // GET: Teachers/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

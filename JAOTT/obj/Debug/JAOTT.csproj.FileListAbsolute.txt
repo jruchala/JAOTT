@@ -81,3 +81,4 @@ c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\De
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.pdb
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.Migrations.troubleshooting.resources
 c:\users\rucha\onedrive\documents\visual studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.csproj.GenerateResource.Cache
+C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\JAOTT\JAOTT\obj\Debug\JAOTT.csprojResolveAssemblyReference.cache

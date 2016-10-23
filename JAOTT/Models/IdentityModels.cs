@@ -38,6 +38,6 @@ namespace JAOTT.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
 
-            
+        public System.Data.Entity.DbSet<JAOTT.Models.Staff> Staffs { get; set; }
     }
 }

@@ -10,110 +10,107 @@ using JAOTT.Models;
 
 namespace JAOTT.Controllers
 {
-    public class VolunteersController : Controller
+    public class StaffsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Volunteers
-        [Authorize(Roles = "Admin")]
+        // GET: Staffs
         public ActionResult Index()
         {
-            return View(db.Volunteers.ToList());
+            return View(db.Staffs.ToList());
         }
 
-        // GET: Volunteers/Details/5
+        // GET: Staffs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Volunteer volunteer = db.Volunteers.Find(id);
-            if (volunteer == null)
+            Staff staff = db.Staffs.Find(id);
+            if (staff == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteer);
+            return View(staff);
         }
 
-        // GET: Volunteers/Create
+        // GET: Staffs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Volunteers/Create
+        // POST: Staffs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,About,Address")] Volunteer volunteer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName")] Staff staff)
         {
             if (ModelState.IsValid)
             {
-                volunteer.Joined = DateTime.Now;
-                db.Volunteers.Add(volunteer);
+                db.Staffs.Add(staff);
                 db.SaveChanges();
-                return RedirectToAction("Details", "Volunteers", new { id = volunteer.Id });
+                return RedirectToAction("Index");
             }
 
-            return View(volunteer);
+            return View(staff);
         }
 
-        // GET: Volunteers/Edit/5
+        // GET: Staffs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Volunteer volunteer = db.Volunteers.Find(id);
-            if (volunteer == null)
+            Staff staff = db.Staffs.Find(id);
+            if (staff == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteer);
+            return View(staff);
         }
 
-        // POST: Volunteers/Edit/5
+        // POST: Staffs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,About,Address,Approved,Joined")] Volunteer volunteer)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName")] Staff staff)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(volunteer).State = EntityState.Modified;
+                db.Entry(staff).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(volunteer);
+            return View(staff);
         }
 
-        // GET: Volunteers/Delete/5
-        [Authorize(Roles = "Admin")]
+        // GET: Staffs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Volunteer volunteer = db.Volunteers.Find(id);
-            if (volunteer == null)
+            Staff staff = db.Staffs.Find(id);
+            if (staff == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteer);
+            return View(staff);
         }
 
-        // POST: Volunteers/Delete/5
+        // POST: Staffs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Volunteer volunteer = db.Volunteers.Find(id);
-            db.Volunteers.Remove(volunteer);
+            Staff staff = db.Staffs.Find(id);
+            db.Staffs.Remove(staff);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
