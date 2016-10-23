@@ -16,7 +16,7 @@ namespace JAOTT.Controllers
 
         // GET: Missions
 
-        [Authorize (Roles ="Admin")]
+       
         public ActionResult Index()
         {
             var missions = db.Missions.Include(m => m.volunteer);
@@ -42,6 +42,7 @@ namespace JAOTT.Controllers
         // GET: Missions/Create
         public ActionResult Create()
         {
+            ViewBag.RequestId = new SelectList(db.Requests, "Id", "Program");
             ViewBag.VolunteerId = new SelectList(db.Volunteers, "Id", "FirstName");
             return View();
         }
@@ -51,7 +52,7 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RequestId,VolunteerId,StartTime")] Mission mission)
+        public ActionResult Create([Bind(Include = "Id,RequestId,VolunteerId,StartTime,About")] Mission mission)
         {
             if (ModelState.IsValid)
             {

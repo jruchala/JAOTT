@@ -40,6 +40,7 @@ namespace JAOTT.Controllers
         public ActionResult Create()
         {
             ViewBag.TeacherId = new SelectList(db.Teachers, "Id", "FirstName");
+            ViewBag.ProgramId = new SelectList(db.Programs, "Id", "Topic");
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace JAOTT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TeacherId,Topic,GradeLevel")] Request request)
+        public ActionResult Create([Bind(Include = "Id,TeacherId,ProgramId,GradeLevel")] Request request)
         {
             if (ModelState.IsValid)
             {
