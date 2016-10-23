@@ -34,7 +34,7 @@ namespace JAOTT.Controllers
             }
             return View(program);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Programs/Create
         public ActionResult Create()
         {
@@ -57,7 +57,7 @@ namespace JAOTT.Controllers
 
             return View(program);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Programs/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -82,13 +82,18 @@ namespace JAOTT.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(program).State = EntityState.Modified;
+                //db.Entry(program).State = EntityState.Modified;
+                db.Programs.Attach(program);
+                db.Entry(program).Property("Id").IsModified = false;
+                db.Entry(program).Property("Topic").IsModified = true;
+                db.Entry(program).Property("Duration").IsModified = true;
+                db.Entry(program).Property("PrepTime").IsModified = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(program);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Programs/Delete/5
         public ActionResult Delete(int? id)
         {

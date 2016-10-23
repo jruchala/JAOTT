@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details about the mission</h2>
 
 <div>
     <h4>Mission</h4>
@@ -29,14 +29,21 @@
         <dt>
             @Html.DisplayNameFor(model => model.StartTime)
         </dt>
+        <a href="~/Views/Missions/Details.cshtml">~/Views/Missions/Details.cshtml</a>
 
         <dd>
             @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt>
+            @Html.DisplayFor(model => model.About)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model =>model.About)
         </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+   
 </p>

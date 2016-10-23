@@ -15,6 +15,8 @@ namespace JAOTT.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Missions
+
+        [Authorize (Roles ="Admin")]
         public ActionResult Index()
         {
             var missions = db.Missions.Include(m => m.volunteer);
@@ -22,6 +24,7 @@ namespace JAOTT.Controllers
         }
 
         // GET: Missions/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -74,7 +77,7 @@ namespace JAOTT.Controllers
                 return HttpNotFound();
             }
             ViewBag.VolunteerId = new SelectList(db.Volunteers, "Id", "FirstName", mission.VolunteerId);
-            return View(mission);
+            return View("Details", "Missions", new { id = mission.Id });
         }
 
         // POST: Missions/Edit/5
