@@ -4,61 +4,63 @@
     ViewBag.Title = "Details";
 }
 
-<div class="container">
-    <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
-    <br />
+<h2>Details</h2>
+
+<div>
     <h4>Volunteer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
 
-    <div>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.FirstName)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.LastName)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.About)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.LastName)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.About)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.About)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.About)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
 
-            @if (User.IsInRole("Admin"))
-            { 
-            <dt>
-                @Html.DisplayNameFor(model => model.Approved)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Approved)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Approved)
-            </dd>
-            }
-            <dt>
-                @Html.DisplayNameFor(model => model.Joined)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Approved)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Joined)
-            </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Joined)
+        </dt>
 
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
+        <dd>
+            @Html.DisplayFor(model => model.Joined)
+        </dd>
 
-    </p>
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
