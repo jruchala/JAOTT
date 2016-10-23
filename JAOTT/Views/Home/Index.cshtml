@@ -1,31 +1,41 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@{Layout = null; }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<doctype html>
+    <html>
+    <body>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+        <link href="~/Content/video.css" rel="stylesheet" />
+        <video type="video/quicktime" id="bgvid" autoplay loop>
+            <source src="~/Content/Why JA-.mp4" type="video/mp4" />
+            <source src="~/Content/Why JA-.mp4" type="video/mp4" />
+        </video>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div id="polina">
+            <h1><img src="https://triadja.org/wp-content/uploads/2016/07/ja-triad-logo-main.png" width="400" height="145" /></h1>
+
+            @Html.ActionLink("Register to Volunteer", "Create", "Volunteers")
+            @Html.ActionLink("Register as Teacher", "Create", "Teachers")
+
+            @*<p><a href="http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video"></a>*@
+            <p><font size="4">YOU HAVE THE POWER</font></p>
+            <p><font size="4">TO INSPIRE STUDENTS TO</font></p>
+            <p><font size="4">SUCCEED!</font></p>
+
+            <p class="serif" align="right"><font size="4">Our mission is to inspire and</font></p>
+            <p class="serif" align="right"><font size="4"> prepare young people to</font></p>
+            <p class="serif" align="right"><font size="4">succeed in a global economy.</font></p>
+            <button>Pause</button>
+
+        </div>
+        <meta charset=utf-8 />
+
+        <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+        <script src="~/Scripts/video.js"> </script>
+
+    </body>
+</html>

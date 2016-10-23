@@ -15,7 +15,7 @@ namespace JAOTT.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Teachers
-        [Authorize (Roles ="Admin")]
+       
         public ActionResult Index()
         {
             return View(db.Teachers.ToList());
